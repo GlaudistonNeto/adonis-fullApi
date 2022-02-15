@@ -1,15 +1,16 @@
+import { v4 as uuidv4 } from 'uuid'
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, beforeCreate } from '@ioc:Adonis/Lucid/Orm'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public name: string
+  public secure_id: uuidv4
 
   @column()
-  public age: number
+  public username: string
 
   @column()
   public email: string
@@ -17,9 +18,20 @@ export default class User extends BaseModel {
   @column()
   public password: string
 
+  @column()
+  public photoUrl: string | null
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @column.dateTime({})
+  public last_login_at: DateTime
+
+  @beforeCreate()
+  public static assignUuid(user: User) {
+    user.secure_id = uuidv4()
+  }
 }
