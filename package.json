@@ -1,5 +1,5 @@
 {
-  "name": "adonis-fullApi",
+  "name": "adonisjs-fullApi",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   "devDependencies": {
     "@adonisjs/assembler": "^5.3.0",
     "adonis-preset-ts": "^2.1.0",
-    "eslint": "^8.8.0",
+    "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-adonis": "^2.1.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -30,6 +30,7 @@
     "mysql": "^2.18.1",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "uuid": "^8.3.2"
   }
 }
